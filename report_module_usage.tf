@@ -8,7 +8,7 @@ resource "scalr_environment" "report_env" {
   name                            = "REPORTS_env_namespace_${count.index}"
   cost_estimation_enabled         = false
 }
-
+/*
 resource "scalr_module" "report_module" {
   count = 21
   environment_id  = scalr_environment.report_env[count.index].id
@@ -19,7 +19,7 @@ resource "scalr_module" "report_module" {
     #tag_prefix = var.module_vcs-repo_tag-prefix
   }
 }
-
+*/
 resource "null_resource" "install_requests" {
   triggers = {
     time = timestamp()
