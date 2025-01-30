@@ -40,9 +40,9 @@ variable "module_vcs-repo_path" {
   description = "'vcs_repo.path' used to create a module. If your module is located in the root folder, submitting blank string MIGHT work. Example: modules/terraform-null-module"
 }
 
-variable "module_vcs-repo_tag-prefix" {
-  description = "'vcs_repo.tag-prefix' used to create a module."
-}
+#variable "module_vcs-repo_tag-prefix" {
+ # description = "'vcs_repo.tag-prefix' used to create a module."
+#}
 
 variable "module_existing_version_number" {
   description = "Specify the semversion of the module that will be created. I.e. 0.0.2"
@@ -69,6 +69,6 @@ variable "ws-vcs_vcs-repo_branch" {
   description = "'vcs_repo.branch' used to create a workspace."
 }
 
-variable "ws-vcs_workdir" {
-  description = "Working directory (path) used to create workspace. Submit blank if configuration is located in the repository root."
-}
+#variable "ws-vcs_workdir" {
+ # description = "Working directory (path) used to create workspace. Submit blank if configuration is located in the repository root."
+#}
