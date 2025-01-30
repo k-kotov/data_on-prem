@@ -3,7 +3,7 @@ resource "scalr_workspace" "ws_vcs" {
   environment_id  = scalr_environment.env_no_tag.id
   vcs_provider_id = scalr_vcs_provider.vcs.id
 
-  working_directory = var.ws-vcs_workdir
+  #working_directory = var.ws-vcs_workdir
 
   vcs_repo {
     identifier = var.ws-vcs_vcs-repo_identifier
