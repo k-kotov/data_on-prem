@@ -16,7 +16,7 @@ resource "scalr_module" "report_module" {
   vcs_repo {
     identifier = var.module_vcs-repo_identifier
     path       = var.module_vcs-repo_path
-    tag_prefix = var.module_vcs-repo_tag-prefix
+    #tag_prefix = var.module_vcs-repo_tag-prefix
   }
 }
 
