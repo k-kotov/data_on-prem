@@ -3,9 +3,9 @@ resource "scalr_policy_group" "policy" {
   opa_version     = var.opa_version
   vcs_provider_id = "vcs-v0ouva2scjtc0blfh"
   vcs_repo {
-    identifier = var.policy_vcs-repo_identifier
-    path       = var.policy_vcs-repo_path
-    branch     = var.policy_vcs-repo_branch
+ identifier = "k-kotov/Policyqaqaqaqaaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaqaq00077777777"
+    path       = "cost"
+    branch     = "second"
   }
 }
 
@@ -14,3 +14,4 @@ resource "scalr_policy_group_linkage" "policy_link" {
   environment_id  = scalr_environment.env_no_tag.id
 
 }
+
