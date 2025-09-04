@@ -2,13 +2,13 @@
 # All modules share the same VCS source but are created at the environment level.
 # You can get rid of the null_resource.wait_for_module, but note that you'll get a fail during first apply and will have to trigger apply again after a few minutes (so all the modules are loaded)
 
-
+/*
 resource "scalr_environment" "report_env" {
   count = 21
   name                            = "REPORTS_env_namespace_${count.index}"
   #cost_estimation_enabled         = false
 }
-/*
+
 resource "scalr_module" "report_module" {
   count = 21
   environment_id  = scalr_environment.report_env[count.index].id
@@ -27,7 +27,7 @@ resource "null_resource" "install_requests" {
   provisioner "local-exec" {
     command = "python3 -m pip install requests"
   }
-  depends_on = [ scalr_environment.report_env ]
+  #depends_on = [ scalr_environment.report_env ]
 }
 
 resource "null_resource" "wait_for_module" {
@@ -53,7 +53,7 @@ data "scalr_module_version" "report_get_modver_id" {
 */
 resource "scalr_workspace" "report_ws" {
   count = 21
-  environment_id = scalr_environment.report_env[count.index].id
+  environment_id = "env-v0ouvafk24mlcpt69"
 
   name              = "REPORTS_module_ws_${count.index}"
  # module_version_id = data.scalr_module_version.report_get_modver_id[count.index].id
@@ -63,4 +63,5 @@ variable "token" {
   description = "Scalr token with admin permissions. You may use the one from the PCFG."
   sensitive = true
 }
+
 
