@@ -6,7 +6,7 @@
 resource "scalr_environment" "report_env" {
   count = 21
   name                            = "REPORTS_env_namespace_${count.index}"
-  cost_estimation_enabled         = false
+  #cost_estimation_enabled         = false
 }
 /*
 resource "scalr_module" "report_module" {
@@ -63,3 +63,4 @@ variable "token" {
   description = "Scalr token with admin permissions. You may use the one from the PCFG."
   sensitive = true
 }
+
