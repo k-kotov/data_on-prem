@@ -1,7 +1,7 @@
 resource "scalr_workspace" "ws_vcs" {
   name            = "workspace_VCS_${formatdate("DDMMYYYY", timestamp())}"
   environment_id  = scalr_environment.env_no_tag.id
-  vcs_provider_id = "vcs-v0ouva2scjtc0blfh"
+  vcs_provider_id = "vcs-v0ov0h9hjod4de9jr"
   #working_directory = var.ws-vcs_workdir
 
   vcs_repo {
@@ -28,4 +28,5 @@ resource "scalr_run_trigger" "run-trigger" {
   downstream_id = scalr_workspace.ws_vcs.id # run automatically triggered in this workspace once the run in the upstream workspace is applied
   upstream_id   = scalr_workspace.ws_cli.id
 }
+
 
